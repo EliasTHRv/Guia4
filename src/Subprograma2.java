@@ -13,42 +13,44 @@ public class Subprograma2 {
         do
         {            
             System.out.println("Ingrese una frase que termine en . : ");
-            fraSe = leerF.next();
+            fraSe = leerF.nextLine();
         } while (!fraSe.endsWith("."));
      fraSeFin =reeM(fraSe);
         System.out.println(fraSeFin);
     }
 
     public static String reeM(String fraSe) {
-        String aux = "";
+        String aux;
+        aux="";
 
         for (int i = 0; i < fraSe.length(); i++)
         {
-            switch(fraSe.substring(i, i + 1))
+            switch(fraSe.substring(i,i+1))
             {
-                case "a":
+               case "a":
                 case "A":
-                    aux = aux.concat("@");
+                    aux += "@";
                     break;
                 case "e":
                 case "E":
-                    aux = aux.concat("#");
+                    aux += "#";
                     break;
                 case "i":
                 case "I":
-                    aux = aux.concat("$");
+                    aux += "$";
                     break;
                 case "o":
                 case "O":
-                    aux = aux.concat("%");
+                    aux += "%";
                     break;
                 case "u":
                 case "U":
-                    aux = aux.concat("*");
+                    aux +="*";
                     break;
                 default:
-                    aux = aux.concat(fraSe.substring(i, i + 1));
+                    aux += fraSe.substring(i, i + 1);
             }
+            
         }
        return aux;
     }
