@@ -1,3 +1,6 @@
+
+import java.util.Scanner;
+
 /*
 Crea una aplicación que nos pida un número por teclado y con una función se lo
 pasamos por parámetro para que nos indique si es o no un número primo, debe 
@@ -16,7 +19,38 @@ El primer número primo es 2, y hay 25 números primos entre 1 y 100, ellos son:
  */
 
 public class Ejercicio4 {
-    public static void main(String [] args){
-        
+      public static void main(String[] args) {
+        Scanner leer = new Scanner(System.in);
+        System.out.println("Ingrese el número para verificar");
+        int num = leer.nextInt();
+        boolean esPrimo = numerosPrimos(num);
+        if (esPrimo) {
+            System.out.println("Es Primo");
+        } else {
+            System.out.println("No es Primo");
+        }
     }
+
+    private static boolean numerosPrimos(int num) {
+        boolean esPrimo = false;
+        int i = 2, aux;
+
+        do {
+            if (num % i == 0) {
+                i = num;
+                break;
+            } else {
+                if (i >= (Math.sqrt(num))) {
+                    esPrimo = true;
+                    i = num;
+                    break;
+                } else {
+                    i++;
+                }
+            }
+        } while (i < num);
+
+        return (esPrimo);
+    }
+
 }

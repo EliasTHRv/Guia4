@@ -19,6 +19,7 @@ public class Ejercicio3 {
 
         Scanner leerE = new Scanner(System.in);
         System.out.println("Ingrese la cantidad de Euros: ");
+        System.out.println(" ");
         euRo = leerE.nextInt();
 
         do {
