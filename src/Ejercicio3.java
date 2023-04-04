@@ -1,5 +1,4 @@
 
-import com.sun.source.tree.IfTree;
 import java.util.Scanner;
 
 /**
@@ -23,48 +22,44 @@ public class Ejercicio3 {
         euRo = leerE.nextInt();
 
         do {
-            
+
             System.out.println("A que moneda desea convertir?");
             System.out.println("Libras -> 1");
             System.out.println("Dolares -> 2");
             System.out.println("Yenes -> 3");
             System.out.println("Finalizar -> 4");
             moNeda = leerE.nextInt();
-            liBra = converL(moNeda, euRo);
-            doLar = converD(moNeda, euRo);
-            yEn = converY(moNeda, euRo);
-
-            switch (moNeda) {
-                case 1:
-                    System.out.println(liBra);
-                    break;
-                case 2:
-                    System.out.println(doLar);
-                    break;
-                case 3:
-                    System.out.println(yEn);
-                    break;
-            }
-        } while (moNeda != 4 && moNeda<4);
+            System.out.println(" ");
+//            liBra = converL(moNeda, euRo);
+//            doLar = converD(moNeda, euRo);
+//            yEn = converY(moNeda, euRo);
+            converL(moNeda, euRo);
+            System.out.println(" ");
+        } while (moNeda != 4 && moNeda < 4);
 
     }
 
-    public static double converL(int moNeda, int euRo) {
-        double cL;
-        cL = 0.86 * euRo;
-        return cL;
+    public static void converL(int moNeda, int euRo) {
+        switch (moNeda) {
+            case 1:
+                double cL;
+                cL = 0.86 * euRo;
+                System.out.println("Convertido a libras: " + cL);
+                break;
+            case 2:
+                double cD;
+                cD = 1.28611 * euRo;
+                System.out.println("Convertido a dolares: " + cD);
+                break;
+            case 3:
+                double cY;
+                cY = 129.852 * euRo;
+                System.out.println("Convertido a yenes: " + cY);
+                break;
+        }
+        
+        
     }
-
-    public static double converD(int moNeda, int euRo) {
-        double cD;
-        cD = 1.28611 * euRo;
-        return cD;
-    }
-
-    public static double converY(int moNeda, int euRo) {
-        double cY;
-        cY = 129.852 * euRo;
-        return cY;
-    }
-
+        
+    
 }

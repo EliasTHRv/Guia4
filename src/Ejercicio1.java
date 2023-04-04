@@ -19,13 +19,11 @@ public class Ejercicio1 {
         nuM2 = leerN.nextInt();
         
         rSuma = suma(nuM1,nuM2);
-        rResta= resta(nuM1,nuM2);
-        rMulti= multi(nuM1,nuM2);
+        rResta = resta(nuM1,nuM2);
+        rMulti = multi(nuM1,nuM2);
         double rDiv= div(nuM1,nuM2);
 
         do {
-            
-            
             System.out.println("Opcion 1: Sumar");
             System.out.println("Opcion 2: Restar");
             System.out.println("Opcion 3: Multiplicar");
@@ -57,7 +55,7 @@ public class Ejercicio1 {
 
     }
 
-    public static int suma(int nuM1, int nuM2){
+    public static  int suma(int nuM1, int nuM2){
     int s= nuM1+nuM2;
         
         return s;
